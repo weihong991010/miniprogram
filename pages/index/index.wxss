@@ -1,0 +1,6 @@
+
+.item {
+	padding: 20rpx;
+	text-align: center;
+	margin: auto;
+}

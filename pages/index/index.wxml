@@ -1,0 +1,20 @@
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+	<view wx:for="{{groupList}}" id="{{'selection-'+groupIndex}}" wx:for-item="list"  wx:for-index="groupIndex"  wx:key="groupIndex" class="list-wrapper">
+		<view wx:if="{{styleMap[groupIndex].visible}}" class="">
+			<view wx:for="{{list}}" wx:for-item="item" id="item-{{item.id}}" wx:key="{{item.id}}" >
+				<view style="height:{{item.height}}rpx;background-color: {{ item.color }};" class="item"> 
+					第{{ groupIndex + 1 }}页 
+					<br/>
+					第{{ index + 1 }} 个
+					<br/>
+					高度{{ item.height }}rpx
+				</view>
+			</view>
+		</view>
+		<view wx:else style="height:{{styleMap[groupIndex].height}}px" class="selection--show">
+			<!-- <feed-card-skeleton wx:for="{{styleMap[groupIndex].skeletonNumber}}" 
+			wx:for-item="skeIdx"  wx:key="skeIdx" class="selection--show" /> -->
+		</view>
+	</view>
+</view>
